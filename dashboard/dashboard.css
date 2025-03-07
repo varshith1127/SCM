@@ -1,0 +1,94 @@
+html,body{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More readable font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f8f9fa; /* Light background */
+    height: 100%;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #343a40; /* Dark sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white; /* White text for sidebar */
+    height: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px; /* Increased padding */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 20px; /* Spacing between grid items */
+}
+
+.main-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Darker heading color */
+}
+
+#summary, #recentActivity, #adminNotifications, #userSpecificInfo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+#summary h3, #recentActivity h3, #adminNotifications h3, #userSpecificInfo h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#summary p, #recentActivity p, #adminNotifications p, #userSpecificInfo p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#logoutBtn{
+    margin-top: auto;
+}

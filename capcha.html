@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCMXPertLite - Sign In</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .signin-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .signin-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signin-container input[type="email"],
+        .signin-container input[type="password"],
+        .signin-container input[type="text"] { /* Added input[type="text"] for captcha */
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .signin-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .signin-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signin-container .admin-checkbox {
+            margin-bottom: 10px;
+        }
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .captcha {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            user-select: none; /* Prevent text selection */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <h2>Sign In</h2>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <label for="captcha">Enter CAPTCHA:</label>
+        <div class="captcha-container">
+            <span id="captchaDisplay" class="captcha"></span>
+            <button type="button" id="refreshCaptcha">Refresh</button>
+        </div>
+        <input type="text" id="captcha" name="captcha" required>
+
+        <div class="admin-checkbox">
+            <input type="checkbox" id="admin">
+            <label for="admin">Admin</label>
+        </div>
+        <button onclick="signin()">Sign In</button>
+        <a href="signup.html">Sign Up</a>
+    </div>
+    <script>
+        function generateCaptcha() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < 5; i++) {
+                captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return captcha;
+        }
+
+        function displayCaptcha() {
+            const captchaDisplay = document.getElementById('captchaDisplay');
+            captchaDisplay.textContent = generateCaptcha();
+        }
+
+        displayCaptcha(); // Generate and display captcha on page load
+
+        document.getElementById('refreshCaptcha').addEventListener('click', displayCaptcha); // Refresh captcha
+
+        function signin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const admin = document.getElementById('admin').checked;
+            const enteredCaptcha = document.getElementById('captcha').value;
+            const generatedCaptcha = document.getElementById('captchaDisplay').textContent;
+
+            if (enteredCaptcha !== generatedCaptcha) {
+                alert("Incorrect CAPTCHA. Please try again.");
+                return;
+            }
+
+            // In a real application, you would send this data to your backend
+            console.log("Signin:", { email, password, admin });
+            alert("Signin successful! (Check console for data)");
+        }
+    </script>
+</body>
+</html>

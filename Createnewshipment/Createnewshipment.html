@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Shipment</title>
+    <link rel="stylesheet" href="createnewshipment.css">
+</head>
+<body>
+    <div class="create-shipment-container">
+        <h2>Create New Shipment</h2>
+        <form id="shipmentForm">
+            <label for="shipmentNumber">Shipment Number:</label>
+            <input type="text" id="shipmentNumber" name="shipmentNumber" required>
+
+            <label for="routeDetails">Route Details:</label>
+            <select id="routeDetails" name="routeDetails">
+                <option value="">Select Route</option>
+                </select>
+
+            <label for="deviceDetails">Device Details:</label>
+            <select id="deviceDetails" name="deviceDetails">
+                <option value="">Select Device</option>
+                </select>
+
+            <label for="ndcNumber">NDC Number:</label>
+            <input type="text" id="ndcNumber" name="ndcNumber">
+
+            <label for="hdcNumber">HDC Number:</label>
+            <input type="text" id="hdcNumber" name="hdcNumber">
+
+            <label for="serialNumber">Serial Number of Goods:</label>
+            <input type="text" id="serialNumber" name="serialNumber">
+
+            <label for="containerNumber">Container Number:</label>
+            <input type="text" id="containerNumber" name="containerNumber">
+
+            <label for="goodsType">Goods Type:</label>
+            <select id="goodsType" name="goodsType">
+                <option value="">Select Goods</option>
+                </select>
+
+            <label for="expectedDeliveryDate">Expected Delivery Date:</label>
+            <input type="date" id="expectedDeliveryDate" name="expectedDeliveryDate">
+
+            <label for="deliveryNumber">Delivery Number:</label>
+            <input type="text" id="deliveryNumber" name="deliveryNumber">
+
+            <label for="bolId">BOL ID:</label>
+            <input type="text" id="bolId" name="bolId">
+
+            <label for="shipmentDescription">Shipment Description:</label>
+            <textarea id="shipmentDescription" name="shipmentDescription" maxlength="100"></textarea>
+
+            <div class="button-container">
+                <button type="submit">CREATE SHIPMENT</button>
+                <button type="button" id="clearDetails">CLEAR DETAILS</button>
+            </div>
+        </form>
+    </div>
+    <script src="createnewshipment.js"></script>
+</body>
+</html>

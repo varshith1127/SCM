@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <img src="../Images/exafluence_logo.jfif" alt="Exafluence Logo" class="logo">
+            <button id="dashboardBtn">Dashboard</button>
+            <button id="personalDetailsBtn">My Account</button>
+            <button id="myShipmentsBtn">My Shipments</button>
+            <button id="createShipmentBtn">Create New Shipment</button>
+            <button id="deviceDataStreamBtn">Device Data Stream</button>
+            <div id="adminButtons">
+                <button id="userManagementBtn">User Management</button>
+                <button id="routeManagementBtn">Route Management</button>
+                <button id="deviceManagementBtn">Device Management</button>
+                <button id="alertsManagementBtn">Alerts Management</button>
+                <button id="shipmentLogsBtn">Shipment Logs</button>
+            </div>
+            <button id="logoutBtn">Logout</button>
+        </aside>
+        <main class="main-content" id="mainContent">
+            <h2>Welcome to SCM</h2>
+            <div id="summary">
+                <p>Total Shipments: 50</p>
+                <p>Active Alerts: 5</p>
+            </div>
+            <div id="recentActivity">
+                <h3>Recent Activity</h3>
+                <p>Last 5 shipments created here.</p>
+            </div>
+            <div id="adminNotifications">
+                <h3>Admin Notifications</h3>
+                <p>Admin notifications and alerts here.</p>
+            </div>
+            <div id="userSpecificInfo">
+                <h3>User Information</h3>
+                <p>User-specific information here.</p>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
